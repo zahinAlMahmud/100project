@@ -1,6 +1,7 @@
-let add = document.getElementById('add');
-let wishlist = document.getElementById('wishlist');
-let count = 0;
+let add = document.querySelectorAll('#add');
+let wishlist = document.querySelectorAll('#wishlist');
+let listCount = 0;
+let cartCount = 0 ;
 let cart = document.getElementById('cart');
 let list = document.getElementById('list');
 
@@ -9,30 +10,43 @@ let list = document.getElementById('list');
 
 // })
 
-function updatedButton() {
-    if (count >= 10) {
-        add.disabled = true;
-        wishlist.disabled = true;
-        console.log('button disable')
-    } else {
-        add.disabled = false;
-        wishlist.disabled = false;
-        console.log('button not disable')
-    }
-}
+// function updatedButton() {
+//     if (count >= 50) {
+//         add.disabled = true;
+//         wishlist.disabled = true;
+//         console.log('button disable')
+//         alert('You can add 10 items at a time');
+//     } else {
+//         add.disabled = false;
+//         wishlist.disabled = false;
+        
+//         console.log('button not disable')
+//     }
+// }
 
-add.addEventListener('click', (e) => {
+add.forEach(btn =>{
+    btn.addEventListener('click', (e) => {
     e.preventDefault();
-    count = count + 1;
-    console.log(count);
-    cart.innerText = count;
-    updatedButton();
+    cartCount++;
+    console.log(cartCount);
+    cart.innerText = cartCount;
+    if(cartCount >= 5){
+        add.forEach(b=>b.disabled =true)
+        alert('You add Maximun 5  items')
+    }
+})
 })
 
-wishlist.addEventListener('click', (e) => {
+wishlist.forEach(btn=>{
+btn.addEventListener('click', (e) => {
     e.preventDefault();
-    count = count + 1;
-    console.log(count);
-    list.innerText = count;
-    updatedButton();
+    listCount++ ;
+    console.log(listCount);
+    list.innerText =listCount;
+    if(listCount >=30){
+        wishlist.forEach(b=>b.disabled=true)
+        alert(`You can add ${listCount} wishlist  for next 24hours`)
+    }
+  
+})
 })
