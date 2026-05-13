@@ -64,3 +64,11 @@ button:hover {
     color: #000;
     background: #fff;
 }
+#add:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+#wishlist:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
