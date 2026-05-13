@@ -1,0 +1,61 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    text-align: center;
+    background-color: #f0f0f0; /* subtle background behind container */
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 400px;
+    height: 80vh;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 2px 4px 15px rgba(0,0,0,0.3);
+    background-image: url('https://picsum.photos/seed/picsum/200/300');
+    background-size: cover;       /* fills container nicely */
+    background-position: center;  /* centers image */
+    background-repeat: no-repeat;
+}
+
+/* Labels */
+label {
+    font-size: 24px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Inputs */
+input {
+    padding: 10px 12px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+}

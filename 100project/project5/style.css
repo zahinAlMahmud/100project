@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    background-color: aqua;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+#logo{
+    color:#fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    list-style: none;
+    text-decoration: none;
+    font-weight: 900;
+    box-shadow: 2px 8px 2px ;
+}
+#navmenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+    list-style: none;
+}
+#navmenu a{
+    text-decoration: none;
+}
+#check-btn{
+    display: none;
+    padding: 8px;
+    margin: 8px;
+    font-size: 44px;
+    border: none;
+    background:transparent;
+}
+
+
+@media (max-width:768px){
+    #check-btn{
+        display: block;
+    }
+    #navmenu{
+        position:fixed;
+        left:-100%;
+        top:70px;
+        gap: 0;
+        flex-direction: column;
+        background: #000;
+        color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    #navmenu li{
+        margin: 16px 0;
+    }
+    #navmenu.active{
+        left: 0;
+    }
+
+
+    
+}

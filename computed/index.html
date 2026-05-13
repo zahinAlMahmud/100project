@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed Project</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h2>Computed Vue jS</h2>
+            <p>Computed Property in Vue js</p>
+        </div>
+        <div class="one">
+            <input v-model="firstName" type="text" placeholder="Enter first Name">
+        </div>
+        <hr>
+        <div class="two">
+            <input v-model="lastName" type="text" placeholder="Enter Last Name">
+        </div>
+        <p>First Name : {{firstName}}</p>
+        <p>Last Name : {{lastName}}</p>
+        <p>Full Name : {{fullName}}</p>
+    </div>
+
+
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
