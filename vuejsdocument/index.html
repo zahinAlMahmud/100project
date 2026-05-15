@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Js project</title>
+      <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">{{ message }}
+
+        <p>Data Binding</p>
+
+        <!-- example of v-for -->
+        <li v-for="item in navList" :key="item">
+            {{item}}
+        </li>
+
+        <!-- example of v-model  -->
+
+        <form >
+            <input type="text"
+            v-model="firstName"
+            placeholder="Enter firstName">
+        </form>
+
+        <p>Hello {{firstName}}</p>
+
+         <!-- example of v-click and v-on:click  -->
+
+         <button type="button" @click=addBtn()>Click btn</button>
+         <button type="button" v-on:click="addBtn">Click</button>
+
+         <!-- example of  v-if v-else-if and v-else -->
+
+         <p v-if="message === 'Hello'">{{message}}</p>
+         <p v-else-if="message === ''"> text is  {{anyThings}}</p>
+         <p v-else=>Other message : {{message}}</p>
+         <p v-html="htmlContent"></p>
+         
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

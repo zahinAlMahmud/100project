@@ -1,0 +1,49 @@
+<div id="app">
+  <h1>{{ message }}</h1>
+
+  <!-- Nav List -->
+  <ul>
+    <li v-for="item in navList" :key="item">{{ item }}</li>
+  </ul>
+
+  <!-- Input + Button -->
+  <input type="text" v-model="firstName" placeholder="Enter your name">
+  <button @click="addName">Add Name</button>
+
+  <!-- Conditional message -->
+  <p v-if="firstName === ''">{{ anyThings }}</p>
+  <p v-else>Hello, {{ firstName }}!</p>
+
+  <!-- Toggle raw HTML -->
+  <button @click="toggleHtml">Toggle HTML</button>
+  <p v-if="showHtml" v-html="htmlContent"></p>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+const { createApp } = Vue
+
+createApp({
+  data() {
+    return {
+      message: 'Vue Interactive Demo',
+      navList: ['Home', 'About', 'Contact'],
+      firstName: "",
+      anyThings: 'Please enter a name above!',
+      htmlContent: "<b>Hello, I am bold!</b> <i>And I am italic!</i>",
+      showHtml: true
+    }
+  },
+  methods: {
+    addName() {
+      if (this.firstName.trim() !== "") {
+        this.navList.push(this.firstName)
+        this.firstName = ""
+      }
+    },
+    toggleHtml() {
+      this.showHtml = !this.showHtml
+    }
+  }
+}).mount('#app')
+</script>
